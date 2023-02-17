@@ -29,3 +29,13 @@ module.exports.store = async (req, res) => {
     });
   }
 };
+
+module.exports.getAll = async (req, res) => {
+  try {
+    await Product.find({}).then((result) => {
+      res.send(result);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

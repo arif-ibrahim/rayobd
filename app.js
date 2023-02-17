@@ -16,6 +16,7 @@ dotenv.config();
 connectDB();
 
 app.use(express.json());
+app.use(express.static(`${__dirname}/public/`));
 
 app.use(slug.API_ROOT_PATH, router);
 
