@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const slug = require("./Common/Constants/slug");
 const router = require("./Router");
 const connectDB = require("./Config/db");
@@ -15,6 +16,7 @@ dotenv.config();
 // DATABASE CONNECTION
 connectDB();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(`${__dirname}/public/`));
 
